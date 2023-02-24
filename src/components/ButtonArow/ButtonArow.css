@@ -1,0 +1,29 @@
+
+.sqs-block-button-element--medium
+{
+    color: white !important;
+    background-color:black!important;
+    width: 80px !important;
+    height: 80px !important;
+    border-radius: 50px !important;
+    font-size: 12px  !important;
+}
+
+
+.sqs-block-button-element--medium:after {
+    content: '>';
+    color: white!important;
+    padding-left: 1px;
+    margin: 0px 0px 0px 1px;
+}
+
+@media (max-width: 700px) { 
+    .sqs-block-button-element--medium
+{
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 30px!important;
+    color: white !important;
+    font-size: 8px  !important;
+}
+ }

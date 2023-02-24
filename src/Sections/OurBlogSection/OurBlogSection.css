@@ -1,0 +1,11 @@
+.ourBlogSContainer {
+    display: flex;
+    justify-content: center;
+    max-width: 1020px;
+    margin: 0px auto;
+}
+.ourBlogSItem {
+    padding: 20px;
+    display: flex;
+    flex-grow: 1;
+}

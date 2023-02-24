@@ -1,0 +1,19 @@
+.headerTitlecontainer {
+    background-color: var(--color-black2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+}
+.headerTitlecontainer h1 {
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--color-white);
+}

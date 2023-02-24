@@ -1,0 +1,36 @@
+.bestSSectionContainer {
+    display: flex;
+    justify-content: center;
+    scroll-margin-top: 200px;
+    max-width: 1020px;
+    margin: 0px auto;
+    margin-bottom: 150px;
+}
+.bestSItem {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 10px;
+}
+.bestSItem img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+}
+.bestSItem .overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background : rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+.bestSItem .overlay:hover {
+    background : rgba(0, 0, 0, 0);
+}

@@ -1,0 +1,94 @@
+.productContainer {    
+    background-color: var(--color-white);
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.productContainer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 2s;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(148, 147, 147, 0.1);
+}
+.center {
+    position: absolute;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all .5s;
+    opacity: 0;
+}
+.productContainer:hover .center {
+    opacity: 1;
+}
+.top {
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+.top h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 0px;
+    color: var(--color-white);
+}
+.center button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background-color: var(--color-black1);
+    display: block;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+}
+.center button:hover {
+    color: var(--color-black1);
+    font-weight: 500;
+    background-color: var(--color-lightgrey1);
+}
+.sold {
+    position: absolute;
+    top: -10px;
+    margin: 0px auto;
+    height: 30px;
+    width: 40px;
+    background: var(--color-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+}
+.sold strong {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    font-size: 10px;
+    color: var(--color-white);
+}

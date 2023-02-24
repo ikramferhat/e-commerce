@@ -1,0 +1,48 @@
+.seeMoreButton {
+    transition: all .5s ease;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    position: relative;
+    padding: 10px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-black1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;   
+}
+.seeMoreButton:hover span,
+.seeMoreButton:hover .icon { 
+    color: var(--color-white);
+}
+.seeMoreButton::after { 
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 0%;
+    height: 101%;
+    background-color: var(--color-black1); 
+    transition: all .5s ease;
+} 
+.seeMoreButton:hover::after {
+    width: 100%;
+    z-index: -1;
+}
+.seeMoreButton span,
+.seeMoreButton .icon { 
+    color: var(--color-black1);
+}
+.seeMoreButton span {
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+.seeMoreButton .icon {
+    font-size: 20px;
+}

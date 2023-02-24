@@ -1,0 +1,35 @@
+.titleScontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px 0px;  
+    padding: 10px;
+}
+.titleScontainer h2 {
+    color: var(--color-black1);;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+}
+
+.titleScontainer h2::after {
+    position: absolute;
+    content: '';
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    bottom: -15px;
+    width: 30%;
+    height: 3px;
+    background: var(--color-brown);
+}
+
+@media only screen and (max-width: 780px) {
+    .titleScontainer {
+        margin: 50px 0px;
+    }
+}

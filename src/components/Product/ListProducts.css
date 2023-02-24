@@ -1,0 +1,46 @@
+.listProductContainer {  
+    margin-bottom: 150px;
+}
+.list {  
+    display: flex;
+    justify-content: center;
+}
+.genderCategoryContainer {
+    margin-bottom: 50px;
+    padding: 0px 5%;
+}
+.genderCategory {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.genderCategory button {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .1em;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    outline: none;
+    border: none;
+}
+.active {
+    background-color: var(--color-black1);
+    color: var(--color-white);
+}
+.deactive {
+    background-color: var(--color-lightgrey);
+    color: black;
+}
+.deactive:hover {
+    background-color: var(--color-lightgrey1);
+    color: var(--color-black1);
+}
+.bottomButton {
+    margin-top: 80px;
+}

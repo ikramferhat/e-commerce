@@ -1,0 +1,119 @@
+.footerContainer {
+    background-color: var(--color-black0);
+    padding: 50px 1%;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+}
+.logoContainer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.itemFooter h2,
+.logoContainer h1,
+.linkF,
+.copyright h6 { 
+    color: var(--color-white);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0px;
+}
+.logoContainer h1 {
+    font-size: 25px;
+    font-weight: 700;
+}
+.itemFooter {
+    padding: 20px 5px;
+}
+.itemFooter h2 {
+    font-size: 15px;
+    font-weight: 600;
+}
+.linkFContainer {
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.linkFContainer:hover .linkF {
+    color: var(--color-grey);
+}
+.linkFContainer:hover .linkF::after {
+    background-color: var(--color-grey);
+}
+.linkF {
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;    
+    position: relative;
+    transition: all .5s ease
+}
+.linkF::after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: 0px;
+    bottom: -6px;
+    width: 70%;
+    height: 1px;
+    background-color: var(--color-white); 
+    transition: all .5s ease;
+}
+.iconFContainer, .iconFContainer a, .copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconFContainer {
+    margin-top: 20px;
+    width: max-content;
+}
+.iconFContainer a {
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: all .5s;
+}
+.iconFContainer a:nth-child(1) {
+    margin-left: 0px;
+}
+.iconFContainer a.facebook {
+   background-color: #3b5998;
+}
+.iconFContainer a.instagram {
+    background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf)
+ }
+ .iconFContainer a.twitter {
+    background-color: #00acee;
+ }
+.iconFContainer a .iconF {
+    color: var(--color-white);
+    font-size: 18px;
+    transition: all .5s;
+}
+.copyright {
+    padding: 20px;
+    background-color: var(--color-black1);
+}
+.copyright h6 {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+@media only screen and (max-width: 959px) {
+    .itemFContainer {
+        margin-top: 50px;
+    }
+}
+@media only screen and (max-width: 780px) {
+    .linkF {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .logoContainer h1 {
+        font-size: 23px;
+    }
+}

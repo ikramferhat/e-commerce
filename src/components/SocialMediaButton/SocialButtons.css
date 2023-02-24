@@ -1,0 +1,33 @@
+.containerSocial {
+    position: fixed;
+    bottom: 100px;
+    width: 50px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 20;
+}
+.containerSocial a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);    
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+    transition: all .5s;
+}
+.containerSocial a .icon {
+    color: var(--color-black2);
+    font-size: 18px;
+    transition: all .5s;
+}
+.containerSocial a:hover .icon {
+    color: var(--color-white);
+}
+.containerSocial a:hover {
+    background-color: var(--color-black1);
+}

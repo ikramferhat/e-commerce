@@ -1,0 +1,66 @@
+.terms-header {
+    height: 500px;
+    width: 100%;
+    background-color:  var(--color-black0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(100% 0, 100% 70%, 80% 100%, 0 70%, 0 0);
+    z-index: 2;
+}
+.terms-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-white);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: max-content; 
+    margin: 0px;
+    text-align: center;
+}
+.terms-Container {
+    margin-top: 100px;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+}
+
+.terms-Container h1,
+.terms-Container p,
+.terms-Container ul li {
+    color: var(--color-black1);
+    text-transform: capitalize;
+    margin: 0px;
+    padding: 0px;
+    word-wrap: break-word;  
+    letter-spacing: 1px;
+}
+.terms-Container h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 30px 0px;
+}
+.terms-Container p, .terms-Container ul li {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+}
+.terms-Container p {
+    margin: 2rem 0px;
+}
+.terms-Container ul {
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: disc;
+}
+.terms-Container ul li {
+    display: list-item;
+    margin: 10px 0px
+}
+
+@media only screen and (max-width: 520px) {
+    .terms-Container h1, .terms-backgroundFix h1 {
+        font-size: 20px;
+    }
+}

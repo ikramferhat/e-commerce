@@ -1,0 +1,28 @@
+.buttonContainer, .buttonContainer .arrowContainer {
+    display: flex;
+}
+.buttonContainer {
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.buttonItem {
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    color: var(--color-black1);
+    border: none;
+    outline: none;
+    background: var(--color-lightgrey);
+    font-size: 35px;
+    text-align: center;
+}
+.buttonItem:hover {
+    color: var(--color-grey1);
+    background-color: var(--color-lightgrey1);
+}
+.prev {
+    margin-right: 5px; 
+}

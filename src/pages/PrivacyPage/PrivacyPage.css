@@ -1,0 +1,65 @@
+.privacy-header {
+    height: 500px;
+    width: 100%;
+    background-color:  var(--color-black0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(100% 0, 100% 70%, 80% 100%, 0 70%, 0 0);
+    z-index: 2;
+}
+.privacy-header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-white);
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: max-content; 
+    margin: 0px;
+    text-align: center;
+}
+.privacy-Container {
+    margin-top: 100px;
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+}
+.privacy-Container h1,
+.privacy-Container p,
+.privacy-Container ul li {
+    color: var(--color-black1);
+    text-transform: capitalize;
+    margin: 0px;
+    padding: 0px;
+    word-wrap: break-word;  
+    letter-spacing: 1px;
+}
+.privacy-Container h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 30px 0px;
+}
+.privacy-Container p, .privacy-Container ul li {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+}
+.privacy-Container p {
+    margin: 2rem 0px;
+}
+.privacy-Container ul {
+    padding-left: 35px;
+    display: flex;
+    flex-direction: column;
+    list-style-type: disc;
+}
+.privacy-Container ul li {
+    display: list-item;
+    margin: 10px 0px
+}
+
+@media only screen and (max-width: 520px) {
+    .privacy-Container h1, .privacy-backgroundFix h1 {
+        font-size: 20px;
+    }
+}
