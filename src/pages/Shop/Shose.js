@@ -21,11 +21,11 @@ const Shose = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const showProducts = () => {
-    axios.get("https://api.escuelajs.co/api/v1/categories/4/products?offset=10&limit=30") 
+    axios.get('https://dummyjson.com/products/category/womens-shoes') 
       .then((response)=>{
-        console.log('product',response.data)
-        setProducts(response.data)
-        setData(response.data)
+        console.log('product',response.data.products)
+        setProducts(response.data.products)
+        setData(response.data.products)
       })
       .catch((err)=>{
         console.log("err", err)
@@ -33,7 +33,7 @@ const Shose = () => {
   }
 
   useEffect(() => {
-    setPath('shoes');
+    setPath('womens-shoes');
   }, []);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ const Shose = () => {
   }, []);
 
   return(
-    <Grid container item  xs={12} md={10} justifyContent="center">
+    <Grid container  xs={12} md={10} justifyContent="center">
       {currentPosts.map((index,i)=>{
         return(
           <Product 
@@ -60,7 +60,7 @@ const Shose = () => {
             title={index.title} 
             image={index.images[0]} 
             price={index.price}  
-            category={index.category.name}
+            category={index.category}
             rating={4}
             item={index}
           />

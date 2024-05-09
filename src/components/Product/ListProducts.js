@@ -10,22 +10,24 @@ import './ListProducts.css';
 const category =[
   {
     id: "all",
-    title: "All"
+    title: "All",
+    category : "all"
+
   },
   {
-    id: "electronics",
-    title: "Electronics",
-    category : "Electronics"
+    id: "dresses",
+    title: "dresses",
+    category : "womens-dresses"
   },
   {
     id: "shoes",
     title: "Shoes",
-    category : "Shoes"
+    category : "womens-shoes"
   },
   {
-    id: "clothes",
-    title: "Clothes",
-    category : "Clothes"
+    id: "jewellery",
+    title: "Jewellery",
+    category : "womens-jewellery"
   },
 ];
 //"Electronics" "Shoes"  "Clothes"
@@ -39,7 +41,7 @@ const ProductList = () => {
      //Filter for category
      const filterResult = (catItem) => {
       const result = products.filter((curDate) => {
-          return curDate.category.name === catItem;
+          return curDate.category === catItem;
       });
       setData(result);
     };
@@ -57,19 +59,18 @@ const ProductList = () => {
 
   const showProducts = () => {
     const rows = []
-    axios.get("https://api.escuelajs.co/api/v1/products")
+    axios.get('https://dummyjson.com/products?limit=100&skip=40')
     .then((response)=>{
-console.log('rrrrrr',response.data);
-      let i = 0;
-      while (rows.length < 10 ){
-        if ((response.data[i].category.name !== 'Furniture') && (response.data[i].category.name !== 'Others')) {
-          rows.push(response.data[i]);
-        }
-        i++;
-      }
-      setProducts(rows);
-      setData(rows);
-      console.log('product',products)
+     console.log('rrrrrr',response.data);
+      const data = response.data.products;  
+      const result =  data.filter(i =>
+        i.category === 'womens-dresses' ||
+        i.category === 'womens-shoes' ||
+        i.category === 'womens-jewellery'
+      )
+      setProducts(result);
+      setData(result);
+      console.log('product====>',products)
     })
     .catch((err)=>{
       console.log("err", err)
@@ -86,13 +87,13 @@ console.log('rrrrrr',response.data);
         <div className="genderCategory" >
           {category.map((index) => (
             <button
-              className={activeMenu == index.id ? 'active' : 'deactive'}
+              className={activeMenu == index.category ? 'active' : 'deactive'}
               onClick={() => {
-                if(index.id === 'all'){
+                if(index.category === 'all'){
                   setData(products);
-                  setActiveMenu(index.id);
-                } else {
-                  setActiveMenu(index.id);
+                  setActiveMenu(index.category);
+                }else{
+                  setActiveMenu(index.category);
                   filterResult(index.category);
                 }
               }}
@@ -110,8 +111,8 @@ console.log('rrrrrr',response.data);
                 title={index.title} 
                 image={index.images[0]} 
                 price={index.price}  
-                category={index.category.name}
-                rating={4}
+                category={index.category}
+                rating={index.rating}
                 item={index}
                 isSold={i == 2 || i == 6 && true}
             />

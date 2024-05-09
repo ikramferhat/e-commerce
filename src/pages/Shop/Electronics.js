@@ -18,11 +18,11 @@ const Electronics = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const showProducts = () => {
-    axios.get("https://api.escuelajs.co/api/v1/categories/2/products?offset=10&limit=30") 
+    axios.get('https://dummyjson.com/products/category/womens-jewellery') 
     .then((response)=>{
-      console.log('product',response.data)
-      setProducts(response.data)
-      setData(response.data)
+      console.log('product',response.data.products)
+      setProducts(response.data.products)
+      setData(response.data.products)
     })
     .catch((err)=>{
       console.log("err", err)
@@ -30,7 +30,7 @@ const Electronics = () => {
   }
 
   useEffect(() => {
-    setPath('electronics');
+    setPath('jewellery');
   }, []);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ const Electronics = () => {
             title={index.title} 
             image={index.images[0]} 
             price={index.price}  
-            category={index.category.name}
+            category={index.category}
             rating={4}
             item={index}
           />

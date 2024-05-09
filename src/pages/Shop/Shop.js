@@ -9,7 +9,7 @@ const Shop = () => {
   const [products,setProducts] = useState([]);
   const [data,setData] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(10);
+  const [postsPerPage] = useState(20);
   const { setPath, price, setPrice } = useContext(AuthContext);
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -18,12 +18,20 @@ const Shop = () => {
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   const showProducts = () => {
-    axios.get("https://api.escuelajs.co/api/v1/products?offset=10&limit=30") 
-      .then((response)=> {
-        console.log('product',response.data)
-        setProducts(response.data)
-        setData(response.data)
-      })
+
+    axios.get('https://dummyjson.com/products?limit=100&skip=30')
+    .then((response)=>{
+     console.log('rrrrrr',response.data);
+      const data = response.data.products;  
+      const result =  data.filter(i =>
+        i.category === 'womens-dresses' ||
+        i.category === 'womens-shoes' ||
+        i.category === 'womens-jewellery'
+      )
+      setProducts(result)
+      setData(result)
+      console.log('product',products)
+    })
       .catch((err)=> {
         console.log("err", err)
       })
@@ -57,7 +65,7 @@ const Shop = () => {
             title={index.title} 
             image={index.images[0]} 
             price={index.price}  
-            category={index.category.name}
+            category={index.category}
             rating={4}
             item={index}
           />

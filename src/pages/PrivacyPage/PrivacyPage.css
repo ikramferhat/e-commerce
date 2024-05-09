@@ -9,7 +9,6 @@
     z-index: 2;
 }
 .privacy-header h1 {
-    font-family: 'Montserrat', sans-serif;
     color: var(--color-white);
     font-size: 25px;
     letter-spacing: 1px;
@@ -25,8 +24,7 @@
     width: 100%;
 }
 .privacy-Container h1,
-.privacy-Container p,
-.privacy-Container ul li {
+.privacy-Container p {
     color: var(--color-black1);
     text-transform: capitalize;
     margin: 0px;
@@ -39,23 +37,13 @@
     font-weight: 700;
     margin: 30px 0px;
 }
-.privacy-Container p, .privacy-Container ul li {
+.privacy-Container p {
     font-size: 14px;
     font-weight: 500;
     line-height: 30px;
 }
 .privacy-Container p {
     margin: 2rem 0px;
-}
-.privacy-Container ul {
-    padding-left: 35px;
-    display: flex;
-    flex-direction: column;
-    list-style-type: disc;
-}
-.privacy-Container ul li {
-    display: list-item;
-    margin: 10px 0px
 }
 
 @media only screen and (max-width: 520px) {

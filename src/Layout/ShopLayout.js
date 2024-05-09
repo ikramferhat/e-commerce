@@ -1,6 +1,6 @@
-import React,{useState, useEffect, useContext} from 'react';
+import React,{useState, useContext} from 'react';
 import { Grid,Container} from '@material-ui/core';
-import {useNavigate,useParams,Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import HeaderTitle from '../components/HeaderTitle/HeaderTitle';
 import { Outlet } from 'react-router-dom';
 import './ShopLayout.css';
@@ -14,18 +14,18 @@ const GenderMenu =[
   },
   {
     id: "clothes",
-    title: "Clothes",
-    category : "/shop/clothes"
+    title: "womens dresses",
+    category : "/shop/womens-dresses"
   },
   {
-    id: "electronics",
-    title: "Electronics",
-    category : "/shop/electronics"
+    id: "jewellery",
+    title: "womens jewellery",
+    category : "/shop/womens-jewellery"
   },
   {
     id: "shoes",
-    title: "Shoes",
-    category : "/shop/shoes"
+    title: "womens shoes",
+    category : "/shop/womens-shoes"
   }
 ];
 

@@ -1,7 +1,6 @@
 #cart {
     margin-top: 185px;
     margin-bottom: 70px;
-    font-family: 'Montserrat', sans-serif;
 }
 .cart-container {
   margin-top: 50px;
@@ -105,19 +104,23 @@
 }
 .cart-containerBottomButton button {
   margin: 10px;
+  width: 90px;
+  height: 90px;
   transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Montserrat', sans-serif;
   position: relative;
   letter-spacing: .06em;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 400;
+  border-radius: 100%;
   text-transform: uppercase;
   outline: none;
-  background-color: transparent;
-  color: var(--color-black1);
+  background-color: var(--color-black1);
+  color: var(--color-white);
   border: none;
 }
 .cart-containerBottomButton button:hover,
@@ -125,16 +128,17 @@
   color: var(--color-brown);
 }
 .cart-containerBottomButton button .arrow-icon {
+  position: absolute;
   font-size: 24px;
   color: var(--color-black1);
   transition: all 0.3s ease;
 }
 .right-icon {
-  margin-left: 5px;
+  right: -15px;
 }
 .left-icon {
   transform: rotate(180deg);
-  margin-right: 5px;
+  left: -15px;
 }
 .cartTotal-container {
   position: relative;

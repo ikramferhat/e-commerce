@@ -28,8 +28,6 @@ import {
 import { CartProvider } from 'react-use-cart';
 import { AuthProvider } from './context/AuthContext';
 
-/*"sass": "^1.53.0",*/
-
 function App() {
   return (
     <CartProvider>
@@ -40,7 +38,7 @@ function App() {
       <ScrollToTop />
       <SocialButtons />
       <div className="container">
-      <Routes>
+        <Routes>
           <Route path="/" element={<Home />}/>       
           <Route path="/cart" element={<Cart />}/>  
           <Route path="/contact" element={<Contact />}/>   
@@ -51,12 +49,12 @@ function App() {
           <Route path="/privacy" element={<Privacy />}/>  
           <Route path="shop" element={<ShopLayout />} >
             <Route index element={<Shop />}/>
-            <Route path="clothes" element={<Clothes />}/>
-            <Route path="shoes" element={<Shose />}/> 
-            <Route path="electronics" element={<Electronics />}/>  
+            <Route path="womens-dresses" element={<Clothes />}/>
+            <Route path="womens-shoes" element={<Shose />}/> 
+            <Route path="womens-jewellery" element={<Electronics />}/>  
           </Route>
           <Route path="/shop/:cat/:id"  element={<ProductDetail />}/>                    
-      </Routes>
+        </Routes>
       </div>
       <Footer />
       </Router>

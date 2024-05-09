@@ -1,8 +1,7 @@
 import React,{useState, useEffect, useContext, useRef} from 'react';
-import { Grid,Button, Typography,Box,Container} from '@material-ui/core';
+import { Grid, Container} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import {useNavigate,useParams,Link} from 'react-router-dom';
-import axios from "axios";
+import { useNavigate } from 'react-router-dom';
 import paypal from '../../images/creditCard/paypal22.png';
 import viza from '../../images/creditCard/visa-credit-card.png';
 import skrill from '../../images/creditCard/skrill.png';
@@ -242,27 +241,11 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-const header = [
-  {
-    title: 'product'
-  },
-  {
-    title: 'price'
-  },
-  {
-    title: 'quantity'
-  },
-  {
-    title: 'subtotal'
-  },
-]
-
 const Cart = () => {
     const classes = useStyles();
     const navigate = useNavigate();
     const { setPath } = useContext(AuthContext);
     const [val, setVal] = useState(false);
-    const [v, setV] = useState('');
 
     const {
       isEmpty,
@@ -290,13 +273,6 @@ const Cart = () => {
       setPath('cart');
     }, []);
 
-/*
-  if(isEmpty) {
-    return (
-      <h1>Your cart is Empty....</h1>
-    )
-  }
-*/
   return (
     <Grid id="cart">
       <HeaderTitle />
@@ -361,10 +337,10 @@ const Cart = () => {
             <Grid xs={12} sm={12} className="cart-containerBottomButton">
               <button onClick={()=> navigate('/shop')}>
                 <ArrowRightAlt className="arrow-icon left-icon"/>
-                continue shopping
+                continue
               </button>
               <button onClick={()=> emptyCart()}>
-                update shopping cart
+                update cart
                 <ArrowRightAlt className="arrow-icon right-icon"/>
               </button>
             </Grid>
@@ -403,15 +379,3 @@ const Cart = () => {
 }
 
 export default Cart;
-
-/* <div className={classes.plusCard}>
-                      <Box
-                        className={classes.plusCardButton}
-                        onClick={()=>updateItemQuantity(item.id, item.quantity - 1)}
-                       >-</Box>
-                       <Typography className={classes.plusCardText}>{item.quantity}</Typography>
-                        <Box
-                         className={classes.plusCardButton}
-                         onClick={()=>updateItemQuantity(item.id, item.quantity + 1)}
-                       >+</Box>
-                    </div>*/

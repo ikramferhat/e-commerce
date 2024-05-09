@@ -1,10 +1,7 @@
-import { Email, Home, Phone } from "@material-ui/icons";
 import ourblog1 from './images/blog/ourblog1.jpg';
 import ourblog2 from './images/blog/ourblog3.jpg';
-import ourblog3 from './images/blog/ourblog2.jpg';
 import ourblog4 from './images/blog/ourblog5.jpg';
 import ourblog5 from './images/bestSeller/b3.jpg';
-import ourblog6 from  './images/bestSeller/b3.jpg';
 
 export const HeaderBottomMenu =[
       {
@@ -24,16 +21,16 @@ export const HeaderBottomMenu =[
         url: '#',
         children: [
           {
-            title: 'clothes',
-            url: '/shop/clothes',
+            title: "women's dresses",
+            url: '/shop/womens-dresses',
           },
           {
-            title: 'shoes',
-            url: '/shop/shoes',
+            title: "women's shoes",
+            url: '/shop/womens-shoes',
           },
           {
-            title: 'electronics',
-            url: '/shop/electronics',
+            title: "women's jewellery",
+            url: '/shop/womens-jewellery',
           }
         ]
     },
@@ -60,21 +57,7 @@ export const HeaderBottomMenu =[
 export const HeaderTopMenu =[
   {
     title: 'English',
-    url: '#',
-    children: [
-      {
-        title: 'men',
-        url: '/shop',
-      },
-      {
-        title: 'woman',
-        url: '/shop',
-      },
-      {
-        title: 'kids',
-        url: '/shop',
-      }
-    ]
+    url: '#'
 },
 {
   title: 'wishlist',
@@ -82,25 +65,15 @@ export const HeaderTopMenu =[
 },
 {
     title: 'dzd',
-    url: '#',
-    children: [
-      {
-        title: 'login',
-        url: '/user'
-      },
-      {
-        title: 'sign up',
-        url: '/user'
-      }
-    ]
+    url: '#'
 }
 
 ];
 export const HeroData =[
     {
         content1: 'COLLECTION 2021',
-        content2: 'New season arrivals',
-        content3:'Check Out All The New Tends',
+        content2: 'Clothes, jewelleries, shoes... ',
+        content3:'Everything a woman needs',
         content4:'shop now',
     },
 ];
@@ -122,18 +95,18 @@ export const footerData = [
       children: [
         {
           id: 1,
-          title: 'clothes',
-          path: '/shop/clothes'
+          title: "women's dresses",
+          path: '/shop/womens-dresses'
         },
         {
           id: 2,
-          title: 'shoes',
-          path: '/shop/shoes'
+          title: "women's shoes",
+          path: '/shop/womens-shoes'
         },
         {
           id: 3,
-          title: 'electronics',
-          path: '/shop/electronics'
+          title: "women's jewellery",
+          path: '/shop/womens-jewellery'
         }
       ]
     },
@@ -184,29 +157,7 @@ export const footerData = [
       title: 'folow us'
     }
   ];
-  export const contactData = [
-    {
-      titlePage: 'contact us',
-      titleForm: 'contact information',
-      children: [
-        {
-          id: 1,
-          icon: Email,
-          title: 'smilland@email.com'
-        },
-        {
-          id: 2,
-          icon: Phone,
-          title: '+213-78-96-85-14'
-        },
-        {
-          id: 3,
-          icon: Home,
-          title: 'Adress/Smile land'
-        }
-      ]
-    }
-];
+ 
 export const ourBlogData = [
   {
     id: '1',
@@ -235,199 +186,5 @@ export const ourBlogData = [
     date: '27 october',
     imgUrl: ourblog5,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  }
-]
-export const termsData = [
-  {
-    titlePageid: 'terms and conditions',
-    termsArray: [
-      {
-        id: 1,
-        title: 'Interpretation and Definitions',
-        description: [
-          {
-            titleChild: 'Interpretation',
-          },
-          {
-            paragraph: 'The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.'
-          },
-          {
-            titleChild: 'Definitions',
-          },
-          {
-            paragraph: 'For the purposes of these Terms and Conditions:'
-          },
-          {
-            listWithTitle: [
-              {
-                title: 'Affiliate',
-                paragraph: 'means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.'
-              },
-              {
-                title: 'Account',
-                paragraph: 'means a unique account created for You to access our Service or parts of our Service.'
-              },
-              {
-                title: 'Company',
-                paragraph: '(referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to FreePrivacyPolicy.com website.'
-              },
-              {
-                title: 'Content',
-                paragraph: 'refers to content such as text, images, or other information that can be posted, uploaded, linked to or otherwise made available by You, regardless of the form of that content.'
-              },
-              {
-                title: 'Country',
-                paragraph: 'refers to: Romania'
-              },
-              {
-                title: 'Device',
-                paragraph: 'means any device that can access the Service such as a computer, a cellphone or a digital tablet.'
-              },
-              {
-                title: 'Feedback',
-                paragraph: 'means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.'
-              },
-              {
-                title: 'Products',
-                paragraph: 'refer to the products or items offered for sale on the Service.'
-              },
-              {
-                title: 'Orders',
-                paragraph: 'mean a request by You to purchase Products from Us.'
-              },
-              {
-                title: 'Promotions',
-                paragraph: 'refer to contests, sweepstakes or other promotions offered through the Service.'
-              },
-              {
-                title: 'Service',
-                paragraph: 'refers to the Website.'
-              },
-              {
-                title: 'Terms and Conditions',
-                paragraph: '(also referred as "Terms" or "Terms of Use") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.'
-              },
-              {
-                title: 'Third-party Social Media Service',
-                paragraph: 'means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.'
-              },
-              {
-                title: 'Website',
-                paragraph: 'refers to FreePrivacyPolicy.com, accessible from https://www.freeprivacypolicy.com'
-              },
-              {
-                title: 'You',
-                paragraph: 'means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.'
-              }
-            ]
-          }
-        ]
-      },
-      {
-        id: 2,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 3,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 4,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 5,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 6,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 7,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 8,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 9,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 10,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 11,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 12,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 13,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 14,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 15,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 16,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 17,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 18,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 19,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 20,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 21,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },
-      {
-        id: 22,
-        title: 'Email',
-        description: 'smilland@email.com'
-      },    
-    ]
   }
 ]

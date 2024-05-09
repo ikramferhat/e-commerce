@@ -70,7 +70,7 @@ const ProductDetail = () => {
   }
 
   const getSingle = (userid) => {
-    axios.get(`https://api.escuelajs.co/api/v1/products/${userid}`)
+    axios.get(`https://dummyjson.com/products/${userid}`)
     .then((res)=>{
       setOneprodut(res.data);
     })
@@ -105,7 +105,7 @@ const ProductDetail = () => {
               <p className="title">{oneproduct.title}</p>
               <Rating 
                 name="half-rating"
-                defaultValue={5}
+                defaultValue={oneproduct.rating}
                 precision={0.5}
                 readOnly
                 size='small'
@@ -113,7 +113,8 @@ const ProductDetail = () => {
               />
               <p className="price">${oneproduct.price}</p>
               <p className="description">{oneproduct.description}</p>
-              <p className="categoryText">category: {oneproduct.category.id}</p>  
+              <p className="categoryText">category: {oneproduct.category}</p>  
+              <p className="categoryText">brand: {oneproduct.brand}</p>  
               <div className="categoryContainer color">
                 <span>Color: </span>
                 <div>

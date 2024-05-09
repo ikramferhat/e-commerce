@@ -1,6 +1,5 @@
 import React,{useState, useEffect, useRef, useContext} from 'react';
-import { Grid,Button, Typography,Box,Container, TextField,IconButton, InputAdornment} from '@material-ui/core';
-import axios from "axios";
+import { Grid, Container } from '@material-ui/core';
 import SignUpForm from '../../components/Form/SignUpForm';
 import LoginForm from '../../components/Form/LoginForm';
 import AuthContext from '../../context/AuthContext';
@@ -26,7 +25,7 @@ const LoginSignup = () => {
 
   useEffect(() => {
     setPath('user');
-  }, []);
+  },[]);
 
   const handleChangeForm = () => {
     setLogin(!login);

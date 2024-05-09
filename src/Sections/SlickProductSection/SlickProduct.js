@@ -28,16 +28,16 @@ export default function SlickProduct() {
 
   const showProducts = () => {
     const rows = []
-    axios.get("https://api.escuelajs.co/api/v1/products?offset=0&limit=30")
+    axios.get('https://dummyjson.com/products?limit=100&skip=40')
     .then((response)=>{
-      let i = 0;
-      while(rows.length < 10 ){
-        if((response.data[i].category.name !== 'Furniture') && (response.data[i].category.name !== 'Others')) {
-          rows.push(response.data[i]);
-        }
-        i++;
-      }
-      setProducts(rows)
+     console.log('rrrrrr',response.data);
+      const data = response.data.products;  
+      const result =  data.filter(i =>
+        i.category === 'womens-dresses' ||
+        i.category === 'womens-shoes' ||
+        i.category === 'womens-jewellery'
+      )
+      setProducts(result)
       console.log('product',products)
     })
     .catch((err)=>{

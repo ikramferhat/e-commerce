@@ -1,29 +1,23 @@
 import React, {useState,useEffect}from 'react';
-import Toolbar from '@material-ui/core/Toolbar';
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar } from '@material-ui/core';
 import {Link} from "react-router-dom"
-import {List, ListItemText, Box, useScrollTrigger, Typography} from "@material-ui/core";
+import {useScrollTrigger} from "@material-ui/core";
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Badge} from '@material-ui/core';
 import { HeaderBottomMenu, HeaderTopMenu } from '../../DATA';
 import SubjectIcon from '@material-ui/icons/Subject';
 import { Search, Twitter, Instagram, Facebook} from '@material-ui/icons';
 import CloseIcon from '@material-ui/icons/Close';
-import { Delete } from '@material-ui/icons';
-import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useCart } from 'react-use-cart';
-import img1 from '../../images/promotion/pro1.jpg';
-import img2 from '../../images/promotion/pro2.jpg';
-import axios from "axios"
-import Product from '../Product/Product';
 import SearchBar from './SearchBar/SearchBar';
 import CartSidebar from './CartSidebar/CartSidebar';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    zIndex: 50,
-    //transition: '0.5s',
+    zIndex: 4,
+   // transition: '0.5s',
+    boxShadow: "0 0 16px rgb(0 0 0 / 9%)",
     position: "fixed",
     top: 0,
     left: 0,
@@ -35,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     padding: "0px 5%",
+    zIndex: 2,
+    background: 'red',
     //transition: '0.5s',
     '@media (max-width:320px)': {        
       padding: "0px 5%",
@@ -44,14 +40,18 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: 'space-between',
     }
   },
-  Toolbar2: {  
+  Toolbar2: { 
+    position: 'absolute',
+    top: '100%',
+    left: 0,
+    right: 0,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: "0px 5%",
     borderBottom: '1px solid rgba(255, 255, 255, 0.2)',
-    zIndex: 2,
-    //transition: '0.5s',
+    zIndex: -1,
+    transition: '0.2s',
     '@media (max-width:780px)': {
       display: 'none'
     }
@@ -186,16 +186,15 @@ const useStyles = makeStyles((theme) => ({
       "&:after" :{  
         position: 'absolute',
         content: '""',
-        display:"pink",
         left: 0,
         bottom: 0,
         width: "0px",
         height: "3px",
-        background: 'red',
+        background: 'black',
         transition:" 0.3s ease 0s, left 0.3s ease 0s",
       },
       "&:hover:after":{ 
-        width: "100%",
+        width: "50%",
         left: "0",
         
       },
@@ -268,25 +267,15 @@ const Header = (props) => {
  
     useEffect(() => {
      const handleResizeWindow = () => setWidth(window.innerWidth);
-      // subscribe to window resize event "onComponentDidMount"
       window.addEventListener("resize", handleResizeWindow);
       return () => {
-        // unsubscribe "onComponentDestroy"
         window.removeEventListener("resize", handleResizeWindow);
       };
     }, []);
 
-    const navigate = useNavigate();
     let location = useLocation();
     const {
-      isEmpty,
-      totalUniqueItems,
-      cartTotal,
       totalItems,
-      items,
-      updateItemQuantity,
-      removeItem,
-      emptyCart
     } = useCart();
 
     const openSidebarCart = () => {
@@ -384,16 +373,45 @@ const Header = (props) => {
           className={classes.nav}
           style={{
             backgroundColor: trigger ? 'white' : navBg,
-            boxShadow: trigger ?  "0 0 16px rgb(0 0 0 / 15%)" :
-            (window.location.pathname === "/about" || window.location.pathname === "/contact" || window.location.pathname === "/" || window.location.pathname === "/terms"  || window.location.pathname === "/privacy") ? 
-             undefined : "0 0 16px rgb(0 0 0 / 15%)"
           }}
         >
-          <div
+          <div style={{ position: 'relative' }}>
+            <div
+              className={classes.Toolbar}
+              style={{backgroundColor:trigger ? 'white' : navBg}}
+            >
+              <div className={classes.mhContainer}>
+                <div
+                  className={classes.mobileicon}
+                  style={{ color: trigger ? '#333333' : colorText}}
+                  onClick={() => setIsMobile(!isMobile)}>
+                  {isMobile ? (<CloseIcon/> ):(<SubjectIcon />)}
+                </div>    
+                <h1
+                  className={classes.LogoMobile}
+                  style={{ color: trigger ? '#333333' : colorText}}
+                >
+                  ShopTemplate
+                </h1>
+              </div>
+              <div className={classes.mhContainer}>
+                <Search
+                  className={classes.Icon}
+                  onClick={openSearchBar}
+                  style={{ color: trigger ? '#333333' : colorText}}
+                />
+                <Badge badgeContent={totalItems} color="secondary" onClick={openSidebarCart}>
+                  <ShoppingCartOutlinedIcon
+                    className={classes.Icon}
+                    style={{ marginRight: 0,color: trigger ? '#333333' : colorText}}
+                  />
+                </Badge>
+              </div>
+              <div
             className={classes.Toolbar2}
             style={{
               backgroundColor: trigger ? 'white' : navBg,
-              display: !showBottomHeader  && 'none'
+              transform: !showBottomHeader ? 'translateY(-100%)' : 'translateY(0%)',
             }}
           >
             <ul style={{ margin: 0 }}>
@@ -428,54 +446,11 @@ const Header = (props) => {
                       >
                         {item.title}
                       </Link>
-                      {item.children && (
-                        <ul
-                          className={classes.dropdown}
-                          style={{ backgroundColor: trigger ? 'white' : navDrop }}
-                        >
-                          {item.children.map((row)=>{
-                            return(
-                              <li><a href={row.url}>{row.title}</a></li>
-                            )
-                          })}
-                        </ul>
-                      )}
                     </li>
                   </>
                 )})}
               </ul>
             </div>
-            <div
-              className={classes.Toolbar}
-              style={{backgroundColor:trigger ? 'white' : navBg}}
-            >
-              <div className={classes.mhContainer}>
-                <div
-                  className={classes.mobileicon}
-                  style={{ color: trigger ? '#333333' : colorText}}
-                  onClick={() => setIsMobile(!isMobile)}>
-                  {isMobile ? (<CloseIcon/> ):(<SubjectIcon />)}
-                </div>    
-                <h1
-                  className={classes.LogoMobile}
-                  style={{ color: trigger ? '#333333' : colorText}}
-                >
-                  ShopTemplate
-                </h1>
-              </div>
-              <div className={classes.mhContainer}>
-                <Search
-                  className={classes.Icon}
-                  onClick={openSearchBar}
-                  style={{ color: trigger ? '#333333' : colorText}}
-                />
-                <Badge badgeContent={totalItems} color="secondary" onClick={openSidebarCart}>
-                  <ShoppingCartOutlinedIcon
-                    className={classes.Icon}
-                    style={{ marginRight: 0,color: trigger ? '#333333' : colorText}}
-                  />
-                </Badge>
-              </div>
               <div className={classes.logoContainer}>
                 <h1
                   className={classes.Logo}
@@ -535,6 +510,7 @@ const Header = (props) => {
           </div>
            <CartSidebar open={sidebarOpen} openCartFunction={openSidebarCart} />  
            <SearchBar open={searchOpen} openSearchFunction={openSearchBar} />
+           </div>
         </div>
         </>
     
