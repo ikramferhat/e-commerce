@@ -15,7 +15,7 @@ import CartSidebar from './CartSidebar/CartSidebar';
 
 const useStyles = makeStyles((theme) => ({
   nav: {
-    zIndex: 4,
+    zIndex: 44,
    // transition: '0.5s',
     boxShadow: "0 0 16px rgb(0 0 0 / 9%)",
     position: "fixed",

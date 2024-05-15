@@ -9,7 +9,8 @@ import Product from '../../Product/Product';
 const useStyles = makeStyles((theme) => ({
   searchBar: {
     position: 'relative',
-    width: '80%',
+    width: '100%',
+    boxSizing: 'border-box',
     margin: '0 auto',
     display: "flex",
     flexDirection: 'row',
@@ -17,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'lightgray',
     padding: '5px 10px',
     transition: 'all .5s',
+    zIndex: 20
   },
   iconConatiner: {
     cursor: "pointer",
@@ -74,10 +76,17 @@ const SearchBar = ({ openSearchFunction, open }) => {
     const [products,setProducts] = useState([])
 
     const showProducts = () => {
-      axios.get("https://fakestoreapi.com/products")
+      axios.get("https://dummyjson.com/products?limit=100")
       .then((response)=>{
-        console.log('product',response.data)
-        setProducts(response.data)
+        console.log('rrrrrr',response.data);
+        const data = response.data.products;  
+        const result =  data.filter(i =>
+        i.category === 'womens-dresses' ||
+        i.category === 'womens-shoes' ||
+        i.category === 'womens-jewellery'
+      )
+        setProducts(result);
+        console.log('product',products)
       })
       .catch((err)=>{
         console.log("err", err)
@@ -121,21 +130,20 @@ const SearchBar = ({ openSearchFunction, open }) => {
             <div className={classes.filtredProducts}>
               {filteredProduct.length == 0 &&
                 (
-                  <h6 style={{color:'black',margin: 20,backgroundColor:'pink'}}>
-                    No results found
-                  </h6>
+                  <h4 style={{color:'black',margin: 20}}>
+                    No results found...
+                  </h4>
                 )
              }
           {
           filteredProduct.map((index,i)=>{
             return(
               <Product 
-              id={index.id} 
-              title={index.title} 
-              image={index.image} 
-              price={index.price}  
-              category={index.category}
-              rating={index.rating}
+                id={index.id} 
+                title={index.title} 
+                image={index.images[0]} 
+                price={index.price}  
+                category={index.category}
             />
             )
             

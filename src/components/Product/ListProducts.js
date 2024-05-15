@@ -46,16 +46,7 @@ const ProductList = () => {
       setData(result);
     };
 
- /* const showProducts = () => {
-    axios.get("https://fakestoreapi.com/products?limit=8")
-    .then((response)=>{
-      console.log('product',response.data)
-      setProducts(response.data)
-    })
-    .catch((err)=>{
-      console.log("err", err)
-    })
-  }*/
+
 
   const showProducts = () => {
     const rows = []
